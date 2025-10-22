@@ -1,4 +1,4 @@
-﻿// ATIVIDADE 2 TESTE
+﻿//ATIVIDADE 1
 
 using System;
 
@@ -49,44 +49,24 @@ public class AlgoritmosDeOrdenacao
 
     public static void Main(string[] args)
     {
-        Console.WriteLine("Escolha a ordem de ordenação (c para crescente / d para decrescente). Pressione Enter para testar ambos.");
-        string escolha = Console.ReadLine();
-
         int[] lista1 = { 5, 1, 4, 2, 8 };
         Console.WriteLine("Lista Original 1: ");
         ImprimirArray(lista1);
 
-        if (string.IsNullOrWhiteSpace(escolha))
-        {
-            BubbleSort(lista1, true);
-            Console.WriteLine("\nLista Ordenada 1 (Crescente): ");
-            ImprimirArray(lista1);
+        BubbleSort(lista1, true);
 
-            Console.WriteLine("------------------------------");
+        Console.WriteLine("\nLista Ordenada 1 (Crescente): ");
+        ImprimirArray(lista1);
 
-            int[] lista2 = { 77, 4, 1, 15, 4, 9, 23 };
-            Console.WriteLine("Lista Original 2: ");
-            ImprimirArray(lista2);
+        Console.WriteLine("------------------------------");
 
-            BubbleSort(lista2, false);
-            Console.WriteLine("\nLista Ordenada 2 (Decrescente): ");
-            ImprimirArray(lista2);
-        }
-        else if (escolha.Trim().ToLower() == "c")
-        {
-            BubbleSort(lista1, true);
-            Console.WriteLine("\nLista Ordenada 1 (Crescente): ");
-            ImprimirArray(lista1);
-        }
-        else if (escolha.Trim().ToLower() == "d")
-        {
-            BubbleSort(lista1, false);
-            Console.WriteLine("\nLista Ordenada 1 (Decrescente): ");
-            ImprimirArray(lista1);
-        }
-        else
-        {
-            Console.WriteLine("Opção inválida. Encerrando.");
-        }
+        int[] lista2 = { 77, 4, 1, 15, 4, 9, 23 };
+        Console.WriteLine("Lista Original 2: ");
+        ImprimirArray(lista2);
+
+        BubbleSort(lista2, false); 
+
+        Console.WriteLine("\nLista Ordenada 2 (Decrescente): ");
+        ImprimirArray(lista2);
     }
 }
