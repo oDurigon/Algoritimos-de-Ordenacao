@@ -1,0 +1,67 @@
+using System;
+
+class BuscaVetor
+{
+    static void Main()
+    {
+        string[] vetor = new string[] {
+            "Alice",
+            "Bruno",
+            "Carla",
+            "Diego",
+            "Eduardo",
+            "Fernanda",
+            "Gustavo",
+            "Helena",
+            "Igor",
+            "Joana"
+        };
+
+        Console.Write("Digite o nome ou número a ser buscado: ");
+        string busca = Console.ReadLine()?.Trim() ?? string.Empty;
+
+        int pos = -1;
+
+        for (int i = 0; i < vetor.Length; i++)
+        {
+            if (string.Equals(vetor[i], busca, StringComparison.OrdinalIgnoreCase))
+            {
+                pos = i;
+                break;
+            }
+        }
+
+        if (pos >= 0)
+        {
+            Console.WriteLine("\n=== TABELA DE NOMES ===\n");
+            Console.WriteLine("| Posição | Nome       |");
+            Console.WriteLine("|---------|------------|");
+            
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                if (i == pos)
+                {
+                    Console.WriteLine($"| {i + 1,7} | {vetor[i],-10} | <-- Encontrado!");
+                }
+                else
+                {
+                    Console.WriteLine($"| {i + 1,7} | {vetor[i],-10} |");
+                }
+            }
+
+            Console.WriteLine($"\nNome buscado: {busca}");
+            Console.WriteLine($"Encontrado na posição: {pos + 1}");
+        }
+        else
+        {
+            Console.WriteLine($"\nO nome '{busca}' não consta no sistema.");
+        }
+    }
+}
+
+
+
+
+
+
+
